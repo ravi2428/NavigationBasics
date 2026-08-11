@@ -1,7 +1,6 @@
 package com.example.navigationbasics.ui.theme
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -13,7 +12,7 @@ import com.example.navigationbasics.SecondScreen
 
 @Composable
 fun Navigation(){
-    val navController = rememberNavController();
+    val navController = rememberNavController()
     NavHost( navController = navController, startDestination = Screen.MainScreen.route){
         composable("MainScreen"){
             Greeting(navController)
