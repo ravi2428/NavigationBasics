@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -74,6 +75,9 @@ fun Greeting(navController: NavController) {
             Text(
                 text = "Error! Text cannot  be empty",
                 modifier = Modifier.padding(vertical = 8.dp)
+                    .background(MaterialTheme.colorScheme.error ),
+                color = MaterialTheme.colorScheme.onError,
+
             )
         }
         Spacer(
@@ -105,7 +109,7 @@ fun Greeting(navController: NavController) {
                     }
                     else{
                         navController.navigate(Screen.SecondScreen.route + "/${name}")
-                        isError = false
+
                     }
                 },
                 colors = ButtonDefaults.buttonColors(
